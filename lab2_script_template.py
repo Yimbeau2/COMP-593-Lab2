@@ -91,7 +91,7 @@ def print_movie_genres(about_me):
 
     while i != 3:
         if i == 2:
-            print(f"and {about_me['movies'][i]['genre']}.", end=" ")
+            print(f"and {about_me['movies'][i]['genre']} movies.")
             
         else:
             print(f"{about_me['movies'][i]['genre']},", end=" ")
@@ -105,10 +105,22 @@ def print_movie_genres(about_me):
 # TODO: Step 8 - Function that prints comma-separated list of movie titles
 def print_movie_titles(movie_list):
     
-    print(f"Some of my favorite movies are")
-    for movies in movie_list:
-        print(f"{movies}")
+    print(f"\nSome of my favorite movies are", end="")
 
+    i = 0
+    while i != 3:
+
+        if i == 2:
+
+            print(f"{movie_list['movies'][i]['title']}.")
+            return
+
+        else:
+        
+            print(f"{movie_list['movies'][i]['title']},", end= " ")
+            i += 1
+    
+    
     
     return
     
