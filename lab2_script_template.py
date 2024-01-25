@@ -39,7 +39,7 @@ Author: Jimbeau
 
 def main():
 
-    #a complex data structure named about_me
+    #a complex data structure named about_me thats.........about me.
 
     about_me = {
 
@@ -75,7 +75,7 @@ def main():
     add_pizza_toppings(about_me,toppings=('JALAPENOS', 'EXTRACHEESE', 'BACON')) 
 
 
-    # Add another movie to the data structure
+    # Adds one of the greatest movies of all time to the data structure.
     about_me['movies'].append({'title':'fantastic beasts And where to find them', 'genre':'fantasy'})
 
     # second print pizza_toppings call
@@ -84,9 +84,8 @@ def main():
     #print movies genres
     print_movie_genres(about_me)
 
+    #prints movie titles
     print_movie_titles(about_me)
-
-
 
 #: Step 4 - Function that prints student name and ID	
 def print_student_name_and_id(about_me):
@@ -107,22 +106,40 @@ def add_pizza_toppings(about_me,toppings):
 
 #: Step 6 - Function that prints bullet list of pizza toppings
 def print_pizza_toppings(about_me):
+    
+     #uses an if statment to print the list in lower case after the list was appended. 
+        if len(about_me['pizza_toppings']) > 3:
+            
+            print(f"My favorite pizza toppings are:")
 
-    print(f"My favorite pizza toppings are:")
+            # sort pizza toppings
+            about_me['pizza_toppings'].sort()
 
-    # sort pizza toppings
-    about_me['pizza_toppings'].sort()
+            #iterates over each topping in pizza_toppings
+            for topping in about_me['pizza_toppings']:
+                
+                #prints a dash then an individual topping 
+                print(f"- {topping.lower()}")
+            print()
 
-    #iterates over each topping in pizza_toppings
-    for topping in about_me['pizza_toppings']:
-        
-        #prints a dash then an individual topping 
-        print(f"- {topping}")
-    print()
-    return
+        else:
+            print(f"My favorite pizza toppings are:")
+
+            # sort pizza toppings
+            about_me['pizza_toppings'].sort()
+
+            #iterates over each topping in pizza_toppings
+            for topping in about_me['pizza_toppings']:
+                
+                #prints a dash then an individual topping 
+                print(f"- {topping}")
+            print()
+
+        return
 
 # Step 7 - Function that prints comma-separated list of movie genres
 def print_movie_genres(about_me):
+    
 
     print(f"I like to watch", end= " ")
 
@@ -141,7 +158,7 @@ def print_movie_genres(about_me):
 
     return 
 
-# TODO: Step 8 - Function that prints comma-separated list of movie titles
+#Step 8 - Function that prints comma-separated list of movie titles
 def print_movie_titles(movie_list):
     
     print(f"\nSome of my favorite movies are ", end="")
@@ -158,8 +175,6 @@ def print_movie_titles(movie_list):
         
             print(f"{movie_list['movies'][i]['title'].title()},", end= " ")
             i += 1
-    
-    
     
     return
     
