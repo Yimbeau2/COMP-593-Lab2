@@ -1,3 +1,42 @@
+'''
+Description: a complex data structure with some functions displaying some methods to work with the data structure.
+
+Usage: python lab2_script_template.py
+
+Author: Jimbeau
+                               .-=-:.                          ..-=-.                               
+                                 ..-+*:                     .:+=-..                                 
+                               .... .:#-                   .=+.. .::.                               
+                               .=#:. .:*=.                .=+.. .:#-.                               
+                                .+*.  .:*%+:.          .:+#+..  .*+.                              ..
+                                 :#:      .-#%*     .#%#-.      :#.                              ...
+     ....:-*%%%%%%%=:....        .+%:.     ..%%%###%%%*.      .:%=         ....:=#%%%%%%#=::...     
+ ...-*%##*-..     .-##%#=:..      .=%*..  .-%#.     .-#%:.  ..*%-       ..:-#%#*-.     ..-*#%%*-... 
+.=##+:..              ..=*%%+-...   .*%=..=%:...::::...+#:..-#*.   ...-=%#*=..              ..:+#%=.
+*%:.                      ..=*##+-.. .-#*:*#+#%#****#%#=%+:*#:. ..-=##*-..                      .:#*
+=%=.                         ...=*%#+-..+%%#=..      ..+#%#=..-=##+-..                          .-#-
+.=%+:.                            .:=*%#*#+....:-----:...+%*##+=..                            .:+#=.
+ .:+##=..          ....:-==++++*******+*%%##%#*+====++*%%#%%*++******++++==-:.....         ..-*#+.. 
+   ..-*%#*-.....-*#%%#*+==---::::::::::=##-...        ...-#%=::::::::::---==+*#%%#*=.....-+#%+-..   
+     ....:+#%%%%=:......            ..*%*:.              .:*%*..            ......:+%%%%#+:...      
+            .:#+.                 .-%%+%+.                .+#*%%=.                ..+#:.            
+             .=%+..         ....-#%#*%%#%=...          ...-%%%%+#%#-....         ..=#=.             
+              .:*%*-.......:-+%#*+#%+.-#%%%=:..........:=#%%%-:*%#+*%%*-:.......:+%*:.              
+                ..=*#%%%%%#*+-.-**:.:*%#%+-+#%%#*++*#%%#+-+%#%#:.-*#-.-+*#%%%%%#*-..                
+                    ....... ..+*:.:*%++#-.  .....::....   .-#*+%*:.:#+:. ......                     
+                           .-#=. .*+.*#:.                  .:#*.+#...=#-.                           
+                          .**:. .++.*%*=:....        .....:=+#%*.**. .:**.                          
+                         .*-.  .+*::%%%%%%%#**********#%%%%%%%%%::*+.  .=#.                         
+                       .:*:.  .=*-.=%=+%%%%%%%%%%%%%%%%%%%%%*-=%-.:#=.  .-#:                        
+                       :*-.  .:*-. -%-.....::::-----::::..... -%: .-#-.  .-*:                       
+                      :+-.   .=+.  .%*.                      .*%.  .==.  ..-*:.                     
+                            .:*:    -%+...                ...=%:    :*-.   ....                     
+                            .=+.     =%*-:................:=*%-.    .+=..                           
+..                          :*:      .-%%%%%%%%%%%%%%%%%%%%%%-.      :*:.                           
+..                         .=*.       .:#%%%%%%%%%%%%%%%%%%#:.       .+=.                           
+..                         .#:          .=#*-.:::::::..:*#=.          :#:                           
+'''
+
 def main():
 
     #a complex data structure named about_me
@@ -15,11 +54,11 @@ def main():
 # a list of dictionaries (2) containing movie details
     'movies': [
         #____ Keys ______ Values _______
-            {'title': 'Harry Potter',
+            {'title': 'harry potter',
              
             'genre': 'fantasy'},
             
-            {'title': 'Ferrari vs Ford',
+            {'title': 'ferrari vs ford',
              
             'genre': 'drama documentary'},
             ]
@@ -37,7 +76,7 @@ def main():
 
 
     # Add another movie to the data structure
-    about_me['movies'].append({'title':'Fantastic Beasts And Where To Find Them', 'genre':'fantasy'})
+    about_me['movies'].append({'title':'fantastic beasts And where to find them', 'genre':'fantasy'})
 
     # second print pizza_toppings call
     print_pizza_toppings(about_me)
@@ -62,7 +101,7 @@ def print_student_name_and_id(about_me):
 def add_pizza_toppings(about_me,toppings):
 
     for topping in toppings:
-
+        topping = topping.lower()
         about_me['pizza_toppings'].append(topping)
     return
 
@@ -78,7 +117,7 @@ def print_pizza_toppings(about_me):
     for topping in about_me['pizza_toppings']:
         
         #prints a dash then an individual topping 
-        print(f"- {topping.lower()}")
+        print(f"- {topping}")
     print()
     return
 
@@ -105,19 +144,19 @@ def print_movie_genres(about_me):
 # TODO: Step 8 - Function that prints comma-separated list of movie titles
 def print_movie_titles(movie_list):
     
-    print(f"\nSome of my favorite movies are", end="")
+    print(f"\nSome of my favorite movies are ", end="")
 
     i = 0
     while i != 3:
 
         if i == 2:
 
-            print(f"{movie_list['movies'][i]['title']}.")
+            print(f"and {movie_list['movies'][i]['title'].title()}.")
             return
 
         else:
         
-            print(f"{movie_list['movies'][i]['title']},", end= " ")
+            print(f"{movie_list['movies'][i]['title'].title()},", end= " ")
             i += 1
     
     
